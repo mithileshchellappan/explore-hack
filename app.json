@@ -1,0 +1,16 @@
+{
+  "expo": {
+    "name": "explore_hacks_init_buld",
+    "slug": "explore_hacks_init_buld",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "orientation": "portrait",
+    "description": "",
+    "android": {
+      "package": "com.godzi.explore_hacks"
+    }
+  },
+  "name": "explore"
+}

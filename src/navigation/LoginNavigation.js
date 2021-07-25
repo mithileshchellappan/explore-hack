@@ -13,17 +13,20 @@ import {
 import Dashboard from "../screens/Dashboard";
 import PostView from "../screens/PostView";
 import ChapterNavigation from "./ChapterNavigation";
+import Login from "../screens/Login"
+import TabNavigator from './TabNavigation'
 
 const Stack = createStackNavigator();
 
 
 
-function RootNavigator(props) {
+function LoginNavigation(props) {
   console.log("root nav");
   return (
+    <NavigationContainer theme={navTheme}>
     <Stack.Navigator
       mode="modal"
-      initialRouteName="Dashboard"
+      initialRouteName="Login"
       screenOptions={{
         headerShown: false,
         cardStyleInterpolator: ({
@@ -46,12 +49,14 @@ function RootNavigator(props) {
         }
       }}
     >
-      <Stack.Screen name="Dashboard" component={Dashboard}/>
-      <Stack.Screen name="ChapterNavigation" component={ChapterNavigation}/>
+      <Stack.Screen name="TabNavigator" component={TabNavigator}/>
+      <Stack.Screen name="Login" component={Login}/>
 
       {/* <Stack.Screen name="PostView" component={PostView} options={{}} />
       <Stack.Screen name="LessonView" component={LessonView} /> */}
     </Stack.Navigator>
+    </NavigationContainer>
+
   );
 }
 
@@ -60,6 +65,6 @@ navTheme.colors.background = "black";
 
 export default function Navigation() {
   return (
-      <RootNavigator />
+      <LoginNavigation />
   );
 }

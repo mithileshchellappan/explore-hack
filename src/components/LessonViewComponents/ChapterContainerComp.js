@@ -16,13 +16,14 @@ function ChapterContainerComp(props) {
 const styles = StyleSheet.create({
   chapterCont: {
     backgroundColor: "#282a36",
-    justifyContent: "space-between",
+    // justifyContent: "space-between",
     marginVertical: 10,
     marginHorizontal: 4,
     top: 60,
     borderRadius: 7,
     flex: 1,
-    alignSelf: "flex-start"
+    alignSelf: "flex-start",
+    // height:350,
   },
   chapterTitle: {
     fontSize: 22,

@@ -14,8 +14,7 @@ import Header from "../components/PostViewComponents/Header";
 import Levels from "../components/PostViewComponents/Levels";
 import Example from "../components/PostViewComponents/Timeline";
 
-const desc =
-  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
+const desc
 
 function PostView(props, navigation) {
   const { params } = props.route;

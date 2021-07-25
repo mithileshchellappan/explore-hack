@@ -5,12 +5,15 @@ import {
   Dimensions,
   Text,
   TextInput,
-  KeyboardAvoidingView
+  KeyboardAvoidingView,
+  TouchableWithoutFeedback
 } from "react-native";
 import Animated from "react-native-reanimated";
 import { TapGestureHandler, State } from "react-native-gesture-handler";
 import { RunTiming } from "../components/Login/Animations";
 import Svg, { Image, Circle, ClipPath } from "react-native-svg";
+import { useNavigation } from "@react-navigation/native";
+
 
 const { height, width } = Dimensions.get("window");
 
@@ -129,7 +132,7 @@ const Login = () => {
     outputRange: [180, 360],
     extrapolate: Extrapolate.CLAMP
   });
-
+  const navigation = useNavigation()
   return (
     <View style={styles.container}>
       <Animated.View
@@ -209,12 +212,16 @@ const Login = () => {
             />
 
             <TextInput
+            secureTextEntry={true}
               placeholder="PASSWORD"
               style={styles.textInput}
               placeholderTextColor="white"
             />
             <Animated.View style={styles.signInButton}>
+            {/* navigation.navigate('ChapterNavigation' */}
+              <TouchableWithoutFeedback onPress={()=>navigation.navigate('TabNavigator')}>
               <Text style={{ fontSize: 20, fontWeight: "bold" }}>SIGN IN</Text>
+                </TouchableWithoutFeedback>
             </Animated.View>
           </View>
         </Animated.View>

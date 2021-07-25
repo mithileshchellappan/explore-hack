@@ -15,61 +15,16 @@ import Levels from "../components/PostViewComponents/Levels";
 import { SectionGrid } from "react-native-super-grid";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
+import firestore from '@react-native-firebase/firestore';
+const BigCardData = firestore().collection('Courses');
+
+
 const SLIDER_WIDTH = Dimensions.get("window").width;
 const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.7);
 const ITEM_HEIGHT = Math.round((ITEM_WIDTH * 3) / 4);
 
 function Dashboard(props) {
-  const [items, setitems] = useState([
-    {
-      name: "Flutter",
-      url: "https://cdn-images-1.medium.com/max/1200/1*5-aoK8IBmXve5whBQM90GA.png"
-    },
-    {
-      name: "React",
-      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png"
-    },
-    {
-      name: "MongoDB",
-      url: "https://infinapps.com/wp-content/uploads/2018/10/mongodb-logo.png"
-    },
-    {
-      name: "Firebase",
-      url: "https://cdn.dribbble.com/users/528264/screenshots/3140440/firebase_logo.png?compress=1&resize=400x300"
-    },
-    {
-      name: "Python",
-      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/2048px-Python-logo-notext.svg.png"
-    },
-    {
-      name: "Google Cloud",
-      url: "https://cloud.google.com/_static/cloud/images/social-icon-google-cloud-1200-630.png"
-    },
-    {
-      name: "GIT",
-      url: "https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png"
-    },
-    {
-      name: "Kotlin",
-      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Kotlin_Icon.png/1024px-Kotlin_Icon.png"
-    },
-    {
-      name: "Typescript",
-      url: "https://cdn.iconscout.com/icon/free/png-512/typescript-1174965.png"
-    },
-    {
-      name: "Angular",
-      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1024px-Angular_full_color_logo.svg.png"
-    },
-    {
-      name: "Swift",
-      url: "https://developer.apple.com/swift/images/swift-og.png"
-    },
-    {
-      name: "Vue",
-      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1024px-Vue.js_Logo_2.svg.png"
-    }
-  ]);
+  const [items, setitems] = useState([]);
 
   return (
     <View style={styles.container}>
@@ -210,37 +165,3 @@ const UserTopBar = () => (
     />
   </View>
 );
-
-export default Dashboard;
-
-const BigCardData = [
-  {
-    tags: ["react-native", "react", "animation"],
-    subject: "React Native",
-    author: "notagodzilla",
-    upvote: "70",
-    title: "React Native Animations",
-    color: "#8ac185",
-    imageUri:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png"
-  },
-  {
-    tags: ["swift", "apple"],
-    subject: "Swift",
-    author: "godzipro",
-    upvote: "120",
-    title: "Advanced Swift",
-    color: "#fed47e",
-    imageUri: "https://developer.apple.com/swift/images/swift-og.png"
-  },
-  {
-    tags: ["python", "ml"],
-    subject: "Python",
-    author: "goofy",
-    upvote: "160",
-    title: "Machine Learning in Python",
-    color: "#ffabc8",
-    imageUri:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/2048px-Python-logo-notext.svg.png"
-  }
-];

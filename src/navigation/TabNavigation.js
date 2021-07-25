@@ -15,7 +15,7 @@ const navTheme = DefaultTheme;
 navTheme.colors.background = "black";
 export default function TabNavigator() {
   return (
-    <NavigationContainer theme={navTheme}>
+    
       <TabNavigation.Navigator
         tabBarOptions={{
           activeBackgroundColor: "black",
@@ -54,6 +54,5 @@ export default function TabNavigator() {
           component={NewPostScreen}
         />
       </TabNavigation.Navigator>
-    </NavigationContainer>
   );
 }

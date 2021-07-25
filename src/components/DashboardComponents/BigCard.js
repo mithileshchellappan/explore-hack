@@ -48,7 +48,7 @@ function BigCard(props) {
             by @{props.item.item.author}
           </Text>
         </View>
-        <Image uri="https://bit.ly/3y2KZlM" style={{ height: 50, width: 50 }} />
+        <Image uri={props.item.item.imageUri} style={{ height: 50, width: 50 }} />
       </View>
       <View style={{ flexDirection: "row", marginLeft: 4 }}>
         {props.item.item.tags.map((tag, i) => (
